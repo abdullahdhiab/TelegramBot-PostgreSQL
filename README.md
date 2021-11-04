@@ -1,30 +1,12 @@
 # TelegramBot-PostgreSQL
-Telegram Бот на Python  с интегрированной в него базой данных PostgreSQL
+Telegram Bot on Python with the PostgreSQL database integrated into it
 
+Today, cities often host various cultural events.For example, it could be a festival, a concert, a film screening, etc.How can I get to these events?You can get to these events in two ways:
 
-Сегодня в городах часто проводится различные культурные массовые мероприятия. 
-Например, это может быть фестиваль, концерт, показ фильма и прочее. 
-Как можно на эти мероприятия попасть? 
-На эти мероприятия можно попасть двумя способами:
-1) Как зритель. То есть, купить билет на это мероприятие.
-2) Как сотрудник. То есть, человек у которого есть аккредитация для посещениения этого мероприятия. 
+Like a viewer. That is, buy a ticket for this event.
+As an employee. That is, a person who has accreditation to attend this event.
+Principle of operation: This project implements the following functionality: There is a file with the Telegram-bottom code and there is a file with requests to the database.When a user enters the bot, he presses / start. Then the bot displays a message with buttons (registration, verification, deletion).When a user presses a registration button, he is invited to choose who he wants to go to the event.If he goes as a viewer, then he must enter the ticket number. If he goes as a journalist (conditionally), then he must enter the accreditation number and name of the publication in which he works.If the user does not remember whether he was registered or not, he presses the "check" button, and the bot gives him an indication of what needs to be done. If the user is in the database, he will be given the corresponding message.If the user does not come to the event, and he wants to "cancel the record" he presses the "deleting" button. The bot gives him an indication of what needs to be done and then the user is given a deletion message.
 
-Принцип работы:
-В данном проекте реализован следующий функционал:
-Есть файл с кодом Телеграм-бота и есть файл с запросами к базе данных.
-Когда пользователь заходит в бота он жмёт /start. Дальше бот выводит сообщение с кнопками (регистрация, проверка, удаление).
-Когда пользователь жмёт кнопку регистрации, ему предлагается выбрать в качестве кого, он хочет пойти на мероприятие.
-Если он идёт как зритель, то он должен ввести номер билета. Если он идёт как журналист (условно), то он должен ввести номер аккредитации и название издания, в котором он работает.
-Если пользователь не помнит регистрировался ли он или нет, он жмёт кнопку "проверка", и бот выдаёт ему указание, что надо сделать. Если пользователь есть в базе, ему будет выдано соответсвующее сообщение.
-Если пользователь не придёт на мероприятие, и он хочет "отменить запись" он жмёт на кнопку "удаление". Бот выдаёт ему указание, что надо сделать и затем пользователю выдаётся сообщение об удалении.
+Notes: In both files, the values of some variables have "read readme". This means that these variables contain unique data. What does it mean?This means that this is data that is individual for each user, for example, a token bot. Each bot has its own.Also, unique data includes bot connection data to the database.To use Python to transfer SQL queries, you need to connect to the database. That is, in the code you need to specify the values of the variables: database name, username, password, local host, port.Each user has his own data, he sets them when installing the DBMS and creating the database (you can see the corresponding guides).
 
-Примечания:
-В обоих файлах в значениях некоторых переменных есть "читай readme". Это значит, что в этих переменных содержится уникальные данные. Что это значит?
-Это значит, что это данные которые индивидуальны у каждого пользователя, например токен бота. У каждого бота он свой.
-Так же к уникальным данным относятся данные подключения бота к базе данных. 
-Что бы с помощью Python передавать SQL-запросы нужно подключиться к базе данных. То есть в коде нужно указать значения переменных: название базы данных, имя пользователя, пароль, локальный хост, порт.
-Эти данные у каждого пользователя свои, он их задаёт при установке СУБД и созданию БД (можно посмотреть соответсвующие гайды).
-
-Запуск:
-Бот запускается с помощью командной строки (терминала). Для этого нужно перейти с папку, где находится файл бота и прописать команду запуска (в каждой операционной системе свои методы).
-Для корректной работы обязательно должен быть включен сервер базы данных.
+Launch: The bot starts using the command line (terminal). To do this, go from the folder where the bot file is located and register the launch command (their methods are in each operating system).For the correct work, a database server must be enabled.
